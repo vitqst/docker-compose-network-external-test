@@ -1,0 +1,14 @@
+version: "3.0"
+services:
+  db:
+    build: .
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: test_db
+    ports:
+      - "3307:3306"
+networks:
+  default:
+    external:
+      name: app_frontend
